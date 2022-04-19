@@ -1,22 +1,16 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Solution {
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
-        int[][] matrix = Input.matrix(5,5);
-        int i = 0, j = 0;
-        boolean isOneFound = false;
-        for(; i < 5; ++i){
-            for(j = 0; j < 5; ++j){
-                if(matrix[i][j] == 1) {
-                    isOneFound = true;
-                    break;
-                }
-            }
-            if(isOneFound) break;
-        }
-        int maxMoves = Math.abs(2 - i) + Math.abs(2 - j);
-        System.out.println(maxMoves);
+        int[] arr = new int[3];
+        arr[0] = scn.nextInt();
+        arr[1] = scn.nextInt();
+        arr[2] = scn.nextInt();
+        Arrays.sort(arr);
+        System.out.println(Math.abs(arr[0]-arr[1]) + Math.abs(arr[1] - arr[2]));
+
     }
 }
 
